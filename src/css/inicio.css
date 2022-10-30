@@ -1,0 +1,182 @@
+#inicial{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+img{
+    width: 10%;
+    height: 5%;
+    margin: 2% 2%;
+}
+
+#LangSel{
+    
+    width: 150px;
+    height: 40px;
+    background-color: black;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border-radius: 10%;
+    border-style: 3px white solid;
+    
+}
+
+select{
+   height: 40px;
+   font-size: larger;
+   border:0px;
+   color:white;
+   background-color: black;
+}
+
+
+#mundito{
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+
+
+#Sel-Butt{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+#language{
+    background-color: black;
+    color: white;
+    width: 120px;
+    height: 50px;
+    font-size: larger;
+    margin: 2% 0;
+}
+
+#InicButton{
+    background-color: crimson;
+    color: white;
+    font-size: larger;
+    width: 150px;
+    height: 50px;
+    border-radius: 10%;
+}
+
+#textoDEabajo{
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+
+.textoDeabajo{
+    color:white;
+    padding: 10px 0;
+    
+}
+
+#textoDEabajoGrande{
+    font-size:4em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#textoDEabajoMediano{
+    font-size: 1.5rem;
+}
+
+#textoEmailButton{
+    display: flex;
+    flex-direction: row;
+}
+
+#textoEmail{
+    width:500px;
+    height:45px;
+}
+
+#textoButton{
+    width:200px;
+    height: 50px;
+    background-color: red;
+    color:white;
+    font-size: large;
+}
+
+#modal{
+    background-color:black;
+    width:450px;
+    height: 660px;
+    margin: 100px auto;
+    color:white;
+    opacity: 80%;
+    
+}
+
+#header{
+    font-family:Helvetica, sans-serif ;
+    font-size: 32px;
+    margin-top: 20px;
+}
+
+#modalConteiner1{
+    width: 400px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    opacity:100%;
+}
+
+#modalConteiner2{
+    width: 400px;
+    height: 200px;
+}
+
+.modal-input{
+    background-color: white;
+    width: 314px;
+    height: 50px;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: column;
+}
+
+.modalinput{
+    margin: 1% 5%;
+    border:0ch;
+    font-size:medium;
+    outline: none;
+    border: 0;
+    padding:0;
+    
+}
+
+.modalspan{
+    color:black;
+    font-size: smaller;
+    margin-top: 0.5rem;
+    margin-left:1rem;
+}
+
+.modalbutton{
+    background-color: red;
+    color:white;
+    width: 314px;
+    height: 50px;
+    border-radius: 5px;
+    
+    font-size: x-large;
+}
+
+#modalhelp{
+    background-color: black;
+    color:white;
+    text-align:right;
+}

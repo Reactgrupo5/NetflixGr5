@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import ModalLogin from "./components/login/ModalLogin";
+import ModalCreateCuenta from "./components/login/ModalCreateCuenta";
 
-function App() {
+import Home from "./views/Home";
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path="*" element={<div>404</div>} />
+          <Route
+            path=""
+            element={
+              <div>
+                <Home />
+              </div>
+            }
+          />
+          <Route
+            path="login"
+            element={
+              <div>
+                <ModalLogin />
+              </div>
+            }
+          />
+          <Route path="create" element={<ModalCreateCuenta />} />
+
+          {/* <Route path="contexto" element={<Contexto />} />
+          <Route path="rutas" element={<HooksYFuncionesDeRutas />} /> */}
+        </Routes>
+      </BrowserRouter>
+    </>
   );
-}
+};
 
 export default App;
