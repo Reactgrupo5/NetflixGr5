@@ -1,13 +1,10 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../../auth/AuthContext";
 
 import Modal from "react-bootstrap/Modal";
 import "../../css/inicio.css";
 
 const ModalLogin = () => {
-  const AuthData = useContext(AuthContext);
-
   const [form, setForm] = useState({
     username: "",
     password: "",
@@ -31,11 +28,7 @@ const ModalLogin = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     handleClose();
-    AuthContext = {
-      ...AuthContext,
-      form,
-    };
-    navigate("/");
+    navigate("/inicio");
     console.log(form);
   };
 

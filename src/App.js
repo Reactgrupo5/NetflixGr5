@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ModalLogin from "./components/login/ModalLogin";
 import ModalCreateCuenta from "./components/login/ModalCreateCuenta";
+import Inicio from "./components/inicio/Inicio";
 
 import Home from "./views/Home";
 
@@ -24,6 +25,14 @@ const App = () => {
             element={
               <div>
                 <ModalLogin />
+              </div>
+            }
+          />
+          <Route
+            path="inicio"
+            element={
+              <div>
+                <Inicio />
               </div>
             }
           />

@@ -38,7 +38,7 @@ const ModalCreateCuenta = () => {
     handleClose();
     // localStorage.clear();
     localStorage.setItem(form.username, form.password);
-    navigate("/");
+    navigate("/inicio");
     console.log(form);
   };
 
@@ -48,6 +48,10 @@ const ModalCreateCuenta = () => {
   };
 
   useEffect(() => {
+    setForm({
+      ...form,
+      ["username"]: sessionStorage.getItem("email"),
+    });
     handleShow();
   }, []);
 
@@ -63,6 +67,7 @@ const ModalCreateCuenta = () => {
               className="modalinput"
               name="username"
               onChange={handleChange}
+              value={form.username}
             />
           </div>
           <div className="modal-input">

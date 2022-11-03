@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import "../../css/inicio.css";
@@ -6,11 +6,26 @@ import "../../css/inicio.css";
 const InicEmail = () => {
   const navigate = useNavigate();
 
+  const [form, setForm] = useState({
+    email: "",
+  });
+
   const texto = "Comenzar  >";
 
   const handleClick = (e) => {
-    console.log(e.target);
+    console.log("e:", form.email);
+    sessionStorage.clear();
+    sessionStorage.setItem("email", form.email);
     navigate("/create");
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+
+    setForm({
+      ...form,
+      [name]: value,
+    });
   };
 
   return (
@@ -27,8 +42,14 @@ const InicEmail = () => {
         reiniciar tu membresía de Netflix
       </div>
       <div id="textoEmailButton">
-        <input type="email" id="textoEmail" placeholder="Email" />
-        <button id="textoButton" onClick={handleClick}>
+        <input
+          type="email"
+          id="textoEmail"
+          name="email"
+          placeholder="Email"
+          onChange={handleChange}
+        />
+        <button id="textoButton" className="InicButton" onClick={handleClick}>
           {texto}
         </button>
       </div>

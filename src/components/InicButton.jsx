@@ -11,7 +11,7 @@ const InicButton = () => {
 
   return (
     <div>
-      <button id="InicButton" onClick={handleClick}>
+      <button id="InicButton" className="InicButton" onClick={handleClick}>
         Iniciar sesión
       </button>
     </div>
