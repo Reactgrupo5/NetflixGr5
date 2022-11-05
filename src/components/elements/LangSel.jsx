@@ -1,6 +1,6 @@
 import React from "react";
-import "../css/inicio.css";
-import { mundito } from "../assets/img/Img";
+import "../../css/inicio.css";
+import { mundito } from "../../assets/img/Img";
 
 const LangSel = () => {
   const handleSelectChange = (e) => {

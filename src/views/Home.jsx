@@ -1,9 +1,9 @@
 import React from "react";
 import Img from "../assets/img/Img";
 import "../css/inicio.css";
-import LangSel from "../components/LangSel";
-import InicButton from "../components/InicButton";
-import InicEmail from "../components/login/InicEmail";
+import LangSel from "../components/elements/LangSel";
+import InicButton from "../components/elements/InicButton";
+import InicEmail from "../components/elements/InicEmail";
 
 const Home = () => {
   return (
