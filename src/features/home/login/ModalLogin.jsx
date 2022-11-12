@@ -1,14 +1,14 @@
 import React, { useState, useEffect, useContext } from "react";
 import { useNavigate } from "react-router-dom";
-import { AuthContext } from "../../auth/AuthContext";
-import users from "../../assets/data/Users";
+import AuthContext from "../../../auth/AuthContext";
+
+import users from "../../../common/data/Users";
 
 import Modal from "react-bootstrap/Modal";
-import "../../css/inicio.css";
+import "../../../css/ModalLogin.css";
+import fondo from "../../../common/img/fondo.jpg"
 
 const ModalLogin = () => {
-  //   const { setIsAuth, setUser, isAuth } = useContext(AuthContext);
-
   const [form, setForm] = useState({
     username: "",
     password: "",
@@ -19,6 +19,8 @@ const ModalLogin = () => {
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
+
+  //   const { setIsAuth, setUser } = useContext(AuthContext);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -33,7 +35,9 @@ const ModalLogin = () => {
     e.preventDefault();
     if (chekUser(form)) {
       handleClose();
-      navigate("/inicio");
+      sessionStorage.clear()
+      sessionStorage.setItem("username",form.username)
+      navigate("/movie");
       //   console.log(form);
     } else {
       alert("Usuario o Contraseña Incorrectos!");
@@ -51,10 +55,10 @@ const ModalLogin = () => {
         users[i].password === form.password
       ) {
         userAuth = true;
+        // setIsAuth(true);
+        // setUser(form.username);
       }
     }
-
-    console.log(userAuth);
 
     return userAuth;
   };
@@ -68,8 +72,12 @@ const ModalLogin = () => {
     handleShow();
   }, []);
 
+  console.log("PASARA?");
+
   return (
-    <div>
+    <div id="container">
+    <img id="fondo" src={fondo} alt="" />
+    <div id="modal-Container"   >
       <Modal show={show} onHide={handleClose} id="modal">
         <div id="modalConteiner1">
           <div id="header">Inicia sesión</div>
@@ -91,9 +99,11 @@ const ModalLogin = () => {
               onChange={handleChange}
             />
           </div>
-          <div>
-            <input type="checkbox" name="modalradio" value="checked" />
-            Recuérdame
+          <div id="check-help">
+            <div>
+              <input type="checkbox" name="modalradio" value="checked" />
+              Recuérdame
+            </div>
             <button onClick={handleHelp} id="modalhelp">
               {" "}
               Necesitas ayuda?
@@ -114,6 +124,7 @@ const ModalLogin = () => {
           por Google reCAPTCHA para comprobar que no eres un robot. Más info.
         </div>
       </Modal>
+    </div>
     </div>
   );
 };

@@ -1,18 +1,18 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const InicButton = () => {
+const InicButton = (props) => {
   const navigate = useNavigate();
 
   const handleClick = (e) => {
     console.log(e.target);
-    navigate("/login");
+    navigate(props.nav);
   };
 
   return (
     <div>
       <button id="InicButton" className="InicButton" onClick={handleClick}>
-        Iniciar sesión
+        {props.texto}
       </button>
     </div>
   );

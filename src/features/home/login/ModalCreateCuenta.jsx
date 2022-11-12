@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 
 import Modal from "react-bootstrap/Modal";
-import "../../css/inicio.css";
+import "../../../css/ModalCreateCuenta.css";
 import { dblClick } from "@testing-library/user-event/dist/click";
 
 const ModalCreateCuenta = () => {
@@ -38,7 +38,7 @@ const ModalCreateCuenta = () => {
     handleClose();
     // localStorage.clear();
     localStorage.setItem(form.username, form.password);
-    navigate("/inicio");
+    navigate("/movie");
     console.log(form);
   };
 

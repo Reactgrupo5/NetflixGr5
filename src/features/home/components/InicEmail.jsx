@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-import "../../css/inicio.css";
-
 const InicEmail = () => {
   const navigate = useNavigate();
 

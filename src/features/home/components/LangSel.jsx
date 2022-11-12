@@ -1,6 +1,6 @@
 import React from "react";
-import "../../css/inicio.css";
-import { mundito } from "../../assets/img/Img";
+
+import { mundito } from "../../../common/img/Img";
 
 const LangSel = () => {
   const handleSelectChange = (e) => {
@@ -9,7 +9,7 @@ const LangSel = () => {
 
   return (
     <div id="LangSel">
-      <img src={mundito} id="mundito" />
+      <img src={mundito} id="mundito" alt=""/>
       <select onChange={handleSelectChange}>
         <option value="spanish" defaultValue>
           Español
